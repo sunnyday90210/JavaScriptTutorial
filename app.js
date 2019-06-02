@@ -1,27 +1,3 @@
-// const http = new XMLHttpRequest();
-// const url =
-//   'https://gist.githubusercontent.com/scottburton11/66a921c458f9500a773a6b0ac65006df/raw/629bfd6a3125e3428bd85a53231bd8018c407a65/Javascript%2520Working%2520With%2520Data%2520Challenge%2520data';
-// const method = 'GET';
-
-// http.open(method, url);
-// http.onreadystatechange = () => {
-//   if (http.readyState === XMLHttpRequest.DONE && http.status === 200) {
-//     const data = JSON.parse(http.responseText);
-//     const topRes = data
-//       .sort(function() {
-//         return (data['Cool Factor'] = 7);
-//       })
-//       .slice(0, 10);
-//     console.log(topRes);
-
-//     console.log(data);
-//   } else if (http.readyState === XMLHttpRequest.DONE && http.status !== 200) {
-//     console.log('Error!');
-//   }
-// };
-
-// http.send();
-
 const http = new XMLHttpRequest();
 const url =
   'https://gist.githubusercontent.com/scottburton11/66a921c458f9500a773a6b0ac65006df/raw/629bfd6a3125e3428bd85a53231bd8018c407a65/Javascript%2520Working%2520With%2520Data%2520Challenge%2520data';
@@ -37,22 +13,7 @@ http.onreadystatechange = () => {
     const finalRes = topRes
       .sort((a, b) => (a['Total Score'] < b['Total Score'] ? 1 : -1))
       .slice(0, 10);
-    console.log(finalRes);
-
-    // const finalCars = finalRes.map(car => {
-    //   return car.Year;
-    // });
-
-    // let fullName;
-    // let totalScore;
-
-    // finalRes.forEach(function(name) {
-    //   fullName = `${name.Year} ${name.Make} ${name.Model}`;
-    //   totalScore = `${name['Total Score']}`;
-    //   console.log(fullName);
-    //   console.log(totalScore);
-    //   document.getElementById('app').innerHTML = fullName;
-    // });
+    // console.log(finalRes);
     let fullName = finalRes
       .map(function(name) {
         return `<div class="card"><div class="car-title">${
